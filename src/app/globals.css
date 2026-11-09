@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* Figma 디자인 토큰 */
+@theme inline {
+  --color-midnight: #031b30;
+  --color-flamingo: #f35925;
+  --color-light-green: #72f3b5;
+  --color-light-green-200: #2ced90;
+  --color-neutral-white: #f8f8f8;
+  --color-lavender-light: #eee5ff;
+  --color-apricot: #fadbd1;
+  --color-basic-gray: #a4a4a4;
+  --color-error: #ff5252;
+
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, monospace;
+  --font-futura: Futura, "Futura PT", var(--font-jost), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #031b30;
+}
+
+body {
+  background: #031b30;
+  color: #f8f8f8;
+}
