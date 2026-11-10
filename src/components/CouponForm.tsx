@@ -10,6 +10,7 @@ import {
   SUPPORT_EMAIL,
   redeemErrorMessage,
   sanitizeCode,
+  verifyErrorMessage,
 } from '@/lib/coupon';
 import { redeemCode, verifyEmail } from '@/lib/promoCodeApi';
 
@@ -17,7 +18,7 @@ type EmailStatus =
   | { kind: 'idle' }
   | { kind: 'verifying' }
   | { kind: 'verified'; nickname: string }
-  | { kind: 'invalid' };
+  | { kind: 'invalid'; message: string };
 
 type Success = { benefitName: string };
 
@@ -70,7 +71,9 @@ export default function CouponForm({ initialCode = '' }: { initialCode?: string 
       return;
     }
     setEmailStatus(
-      result.ok ? { kind: 'verified', nickname: result.data.nickname } : { kind: 'invalid' },
+      result.ok
+        ? { kind: 'verified', nickname: result.data.nickname }
+        : { kind: 'invalid', message: verifyErrorMessage(result.errorCode) },
     );
   };
 
@@ -107,7 +110,7 @@ export default function CouponForm({ initialCode = '' }: { initialCode?: string 
         return;
       }
       if (result.errorCode === 'ACCOUNT_NOT_FOUND') {
-        setEmailStatus({ kind: 'invalid' });
+        setEmailStatus({ kind: 'invalid', message: INVALID_EMAIL_MESSAGE });
         return;
       }
       setCodeError(result.errorCode ? redeemErrorMessage(result.errorCode) : GENERIC_ERROR_MESSAGE);
@@ -173,7 +176,7 @@ export default function CouponForm({ initialCode = '' }: { initialCode?: string 
           )}
           {emailStatus.kind === 'invalid' && (
             <p role='alert' className={`${messageClass} text-error`}>
-              {INVALID_EMAIL_MESSAGE}
+              {emailStatus.message}
             </p>
           )}
         </div>

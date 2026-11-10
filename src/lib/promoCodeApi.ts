@@ -4,7 +4,8 @@ export type ApiErrorCode =
   | 'EXPIRED_CODE'
   | 'ALREADY_USED'
   | 'ALREADY_HAS_BENEFIT'
-  | 'ALREADY_REDEEMED_CAMPAIGN';
+  | 'ALREADY_REDEEMED_CAMPAIGN'
+  | 'TOO_MANY_REQUESTS';
 
 export type ApiFailure = {
   ok: false;
