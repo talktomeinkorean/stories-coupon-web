@@ -14,7 +14,6 @@
 
   --font-sans: var(--font-dm-sans), system-ui, sans-serif;
   --font-mono: var(--font-dm-mono), ui-monospace, monospace;
-  --font-futura: Futura, "Futura PT", var(--font-jost), sans-serif;
 }
 
 html {

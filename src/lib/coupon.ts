@@ -3,10 +3,8 @@ export const MAX_CODE_LENGTH = 16;
 
 export const SUPPORT_EMAIL = 'help@talktomeinkorean.com';
 
-export const APP_STORE_URL =
-  'https://apps.apple.com/us/app/ttmik-stories-learn-korean/id1659613381';
-export const PLAY_STORE_URL =
-  'https://play.google.com/store/apps/details?id=app.ttmikstories.android';
+/** AppsFlyer OneLink — 기기(iOS·Android)에 맞는 스토어로 알아서 이동 */
+export const APP_DOWNLOAD_URL = 'https://ttmikstories.onelink.me/Mj4f/9vdngjvq';
 
 export const INVALID_EMAIL_MESSAGE = 'Please enter a valid one.';
 export const GENERIC_ERROR_MESSAGE = 'Something went wrong. Please try again.';

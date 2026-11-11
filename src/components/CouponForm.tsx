@@ -27,14 +27,14 @@ const EMAIL_MESSAGE_ID = 'account-email-message';
 const CODE_INPUT_ID = 'coupon-code';
 const CODE_MESSAGE_ID = 'coupon-code-message';
 
-const labelClass = 'text-[27px] leading-[33px] font-bold text-light-green';
+const labelClass = 'text-[20px] font-bold text-light-green';
 const fieldBoxClass =
-  'flex h-[72px] w-full items-center gap-[10px] rounded-[10px] bg-white/10 px-6 ' +
+  'flex h-[56px] w-full items-center gap-[10px] rounded-[10px] bg-white/10 px-6 ' +
   'focus-within:ring-2 focus-within:ring-light-green/60';
 const inputClass =
-  'min-w-0 flex-1 bg-transparent text-[22px] text-neutral-white outline-none ' +
+  'min-w-0 flex-1 bg-transparent text-[14px] text-neutral-white outline-none ' +
   'placeholder:text-neutral-white/36 [font-variation-settings:"opsz"_9]';
-const messageClass = 'pt-3 pl-[2px] font-mono text-[16px] leading-[21px]';
+const messageClass = 'pt-2 pl-[2px] font-mono text-[12px] leading-[16px]';
 
 export default function CouponForm({ initialCode = '' }: { initialCode?: string }) {
   const [email, setEmail] = useState('');
@@ -129,12 +129,12 @@ export default function CouponForm({ initialCode = '' }: { initialCode?: string 
       {/* Account Email */}
       <div className='flex w-full flex-col items-start'>
         <div className='flex w-full flex-wrap items-center justify-between gap-x-1 gap-y-1 pb-[14px]'>
-          <label htmlFor={EMAIL_INPUT_ID} className={labelClass}>
+          <label htmlFor={EMAIL_INPUT_ID} className={`${labelClass} leading-[33px]`}>
             Account Email
           </label>
           <a
             href='#how-to-find-email'
-            className='flex items-center gap-[2px] text-[19.8px] leading-[29.7px] font-bold text-neutral-white hover:underline'
+            className='flex items-center text-[16px] leading-[normal] font-bold text-neutral-white hover:underline'
           >
             How to find it?
             <Image src='/icons/arrow-next.svg' alt='' width={16} height={16} unoptimized />
@@ -161,7 +161,7 @@ export default function CouponForm({ initialCode = '' }: { initialCode?: string 
               type='button'
               onClick={() => void handleVerify()}
               disabled={emailStatus.kind === 'verifying' || isVerified}
-              className='shrink-0 text-[22px] font-semibold text-flamingo uppercase disabled:cursor-default disabled:opacity-50'
+              className='shrink-0 text-[14px] font-semibold text-flamingo uppercase disabled:cursor-default disabled:opacity-50'
             >
               {emailStatus.kind === 'verifying' ? 'Verifying…' : 'Verify'}
             </button>
@@ -169,7 +169,7 @@ export default function CouponForm({ initialCode = '' }: { initialCode?: string 
         </div>
         <div id={EMAIL_MESSAGE_ID} aria-live='polite' className='w-full'>
           {emailStatus.kind === 'verified' && (
-            <p className={`${messageClass} flex items-center gap-[2px] tracking-[-0.32px] text-light-green-200`}>
+            <p className={`${messageClass} flex items-center gap-[2px] tracking-[-0.24px] text-light-green-200`}>
               <Image src='/icons/check.svg' alt='' width={16} height={16} unoptimized />
               <span>Verified. Your nickname: {emailStatus.nickname}</span>
             </p>
@@ -183,8 +183,8 @@ export default function CouponForm({ initialCode = '' }: { initialCode?: string 
       </div>
 
       {/* Coupon Code */}
-      <div className='flex w-full flex-col items-start pt-8'>
-        <label htmlFor={CODE_INPUT_ID} className={`${labelClass} pb-[13.2px]`}>
+      <div className='flex w-full flex-col items-start pt-6'>
+        <label htmlFor={CODE_INPUT_ID} className={`${labelClass} pb-[13.2px] leading-[normal]`}>
           Coupon Code
         </label>
         <div className={fieldBoxClass}>
@@ -218,7 +218,7 @@ export default function CouponForm({ initialCode = '' }: { initialCode?: string 
           type='submit'
           disabled={!canApply}
           aria-busy={applying}
-          className='flex h-[72px] w-[327px] max-w-full items-center justify-center rounded-full bg-flamingo text-[24px] font-bold text-neutral-white uppercase transition-colors disabled:cursor-not-allowed disabled:bg-basic-gray'
+          className='flex h-[50px] w-[327px] max-w-full items-center justify-center rounded-full bg-flamingo text-[14px] font-bold text-neutral-white uppercase transition-colors disabled:cursor-not-allowed disabled:bg-basic-gray'
         >
           {applying ? 'Applying…' : 'Apply'}
         </button>
@@ -230,16 +230,16 @@ export default function CouponForm({ initialCode = '' }: { initialCode?: string 
             role='status'
             className='mt-8 flex w-full flex-col items-center gap-2 rounded-[10px] border border-light-green/60 bg-light-green/10 px-6 py-6 text-center'
           >
-            <p className='text-[27px] leading-[33px] font-bold text-light-green'>Code applied!</p>
-            <p className='text-[18px] text-neutral-white'>You now have {success.benefitName}.</p>
-            <p className='text-[18px] text-neutral-white'>
+            <p className='text-[20px] leading-[26px] font-bold text-light-green'>Code applied!</p>
+            <p className='text-[14px] text-neutral-white'>You now have {success.benefitName}.</p>
+            <p className='text-[14px] text-neutral-white'>
               Open the TTMIK Stories app to start learning.
             </p>
           </div>
         )}
       </div>
 
-      <p className='w-full pt-10 text-center text-[18px] leading-[23px] text-neutral-white'>
+      <p className='w-full pt-10 text-center text-[14px] leading-[normal] text-neutral-white'>
         If you have any trouble applying your code,
         <br />
         please contact{' '}

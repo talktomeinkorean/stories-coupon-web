@@ -20,13 +20,13 @@ export default function HowToFindEmail() {
     >
       <h2
         id='how-to-find-email-title'
-        className='w-full text-[27px] leading-[33px] font-bold text-lavender-light'
+        className='w-full text-[20px] leading-[33px] font-bold text-lavender-light'
       >
         How to find your account email
       </h2>
       <div className='flex w-full flex-col gap-3'>
-        <div className='flex w-full flex-col items-center gap-[33px] overflow-hidden rounded-[20px] bg-white px-6 py-[47px]'>
-          <p className='w-[370px] max-w-none shrink-0 border border-flamingo bg-apricot p-[10px] text-center text-[20px] leading-[26px] whitespace-nowrap text-midnight'>
+        <div className='flex w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-[20px] bg-white p-6'>
+          <p className='w-[296px] max-w-none shrink-0 border border-flamingo bg-apricot p-[10px] text-center text-[14px] leading-[normal] whitespace-nowrap text-midnight'>
             Don’t have an account yet?
             <br />
             Download the app and sign up.
@@ -38,7 +38,7 @@ export default function HowToFindEmail() {
             key={step.alt}
             src={step.image}
             alt={step.alt}
-            sizes='(min-width: 720px) 672px, calc(100vw - 48px)'
+            sizes='(min-width: 500px) 452px, calc(100vw - 48px)'
             className='h-auto w-full'
           />
         ))}
