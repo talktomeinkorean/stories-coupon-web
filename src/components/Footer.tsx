@@ -12,7 +12,7 @@ export default function Footer() {
           One story can change everything
         </p>
       </div>
-
+      {/* 1140px 폭 기준 상단 322px 노출, 더 넓은 화면에서는 같은 비율로 확대 */}
       <div className="relative h-[322px] w-full overflow-hidden min-[1140px]:h-[28.25vw]">
         <Image
           src={bottomBg}
