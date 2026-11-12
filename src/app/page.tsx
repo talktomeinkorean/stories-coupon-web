@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <main className='mx-auto flex w-full max-w-[720px] flex-col items-start px-6 pt-10'>
+      <main className='mx-auto flex w-full max-w-[500px] flex-col items-start px-6 pt-10'>
         <Suspense fallback={<CouponForm />}>
           <CouponFormWithQuery />
         </Suspense>
