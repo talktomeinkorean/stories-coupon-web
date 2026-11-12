@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useRef, useState, type FormEvent, type KeyboardEvent } from 'react';
 
 import {
+  APP_DOWNLOAD_URL,
   GENERIC_ERROR_MESSAGE,
   INVALID_EMAIL_MESSAGE,
   MIN_CODE_LENGTH,
@@ -228,13 +229,25 @@ export default function CouponForm({ initialCode = '' }: { initialCode?: string 
         {success && (
           <div
             role='status'
-            className='mt-8 flex w-full flex-col items-center gap-2 rounded-[10px] border border-light-green/60 bg-light-green/10 px-6 py-6 text-center'
+            className='mt-8 flex w-full flex-col items-center gap-2 rounded-[10px] border border-light-green/60 bg-light-green/10 p-6 text-center'
           >
             <p className='text-[20px] leading-[26px] font-bold text-light-green'>Code applied!</p>
-            <p className='text-[14px] text-neutral-white'>You now have {success.benefitName}.</p>
-            <p className='text-[14px] text-neutral-white'>
+            <p className='text-[14px] leading-[21px] text-neutral-white'>
+              You now have {success.benefitName}.
+            </p>
+            <p className='text-[14px] leading-[21px] text-neutral-white'>
               Open the TTMIK Stories app to start learning.
             </p>
+            <div className='flex w-full justify-center pt-3'>
+              <a
+                href={APP_DOWNLOAD_URL}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex h-[50px] w-[327px] max-w-full items-center justify-center rounded-full bg-electric-violet text-[14px] leading-[normal] font-bold text-neutral-white uppercase'
+              >
+                Start reading
+              </a>
+            </div>
           </div>
         )}
       </div>
