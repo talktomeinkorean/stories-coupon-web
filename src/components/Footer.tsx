@@ -39,7 +39,7 @@ export default function Footer() {
         />
       </div>
 
-      <div className="mx-auto flex w-full max-w-[500px] flex-col items-start gap-6 px-6 py-10">
+      <div className="mx-auto flex w-full max-w-[720px] flex-col items-start gap-6 px-6 py-10">
         <nav aria-label="Policies" className="flex items-start gap-6">
           <a href={POLICY_LINKS[0].href} target="_blank" rel="noopener noreferrer" className={linkClass}>
             {POLICY_LINKS[0].label}
